@@ -36,7 +36,7 @@ public class GameApp {
 		response = keyboard.nextLine();
 
 		if (response.equals("Yes")){
-			System.out.println("Please pick your Hero");
+//			System.out.println("Please pick your Hero");
 
 //			System.out.println("Welcome to the Halloween Maze!\n"
 //					+ "Would you like to play and move through the maze? Yes or No?\n");
