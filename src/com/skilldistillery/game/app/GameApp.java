@@ -17,7 +17,9 @@ public class GameApp {
 		welcome.welcomeMenu();	
 	}
 
+
 	public void welcomeMenu() { 
+
 		String response = " ";
 		int selection=0;
 		Scanner keyboard = new Scanner(System.in);
@@ -29,6 +31,11 @@ public class GameApp {
 		
 		if (response == "Yes") {
 		System.out.println("Please pick your Hero");
+
+		System.out.println(
+				"Welcome to the Halloween Maze!\n" + "Would you like to play and move through the maze? Yes or No?\n");
+		keyboard.nextLine();
+		System.out.println("Please pick your Hero");
 		System.out.println("---MENU-------");
 		System.out.println("1) King       ");
 		System.out.println("2) Queen      ");
@@ -36,12 +43,12 @@ public class GameApp {
 		System.out.println("--------------");
         selection = keyboard.nextInt();
         
-        King king = new King("I'm the King");
-        Queen queen = new Queen("I'm the Queen");
-        Clown clown = new Clown("I'm the clown");
+//        King king = new King("I'm the King");
+//        Queen queen = new Queen("I'm the Queen");
+//        Clown clown = new Clown("I'm the clown");
         	
         }
-		switch (selection) {
+/*		switch (selection) {
 		case 1: player = new King(selection);
 				break;
 		case 2: player = new Queen(selection);
@@ -52,7 +59,7 @@ public class GameApp {
 			System.out.println("Invalid input. You are too stoopid to play");
 			break;
 		} // switch
-	
+*/	
 } //response = yes
 		
 } //welcomemenu
