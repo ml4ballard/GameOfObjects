@@ -5,6 +5,7 @@ public class Queen extends GameCharacter{
 	private String name = "I'm the Queen";
 	private String noise;
 	private int points = 50;
+	private String walk;
 
 	public Queen() {
 		super();
@@ -12,6 +13,14 @@ public class Queen extends GameCharacter{
 
 	public Queen(String name) {
 		super(name);
+	}
+	
+	public String getWalk() {
+		return walk;
+	}
+	
+	public void setWalk(String walk) {
+		this.walk = walk;
 	}
 
 	public String getName() {

@@ -4,6 +4,7 @@ public class Clown extends GameCharacter {
 	private String name = "I'm the Clown";
 	private String noise;
 	private int points = 10;
+	private String walk;
 
 	public Clown() {
 		super();
@@ -11,6 +12,14 @@ public class Clown extends GameCharacter {
 
 	public Clown(String name) {
 		super(name);
+	}
+	
+	public String getWalk() {
+		return walk;
+	}
+
+	public void setWalk(String walk) {
+		this.walk = walk;
 	}
 
 	public String getName() {

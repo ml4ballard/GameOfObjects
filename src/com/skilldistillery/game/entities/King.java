@@ -4,6 +4,7 @@ public class King extends GameCharacter {
 	private String name = "I'm the King";
 	private String noise;
 	private int points = 25;
+	private String walk;
 
 	public King() {
 		super();
@@ -12,8 +13,14 @@ public class King extends GameCharacter {
 	public King(String name) {
 		super(name);
 	}
-	public String getWalk(String walk) {
+	
+
+	public String getWalk() {
 		return walk;
+	}
+
+	public void setWalk(String walk) {
+		this.walk = walk;
 	}
 
 	public String getName() {

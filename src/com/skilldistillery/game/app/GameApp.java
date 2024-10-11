@@ -37,7 +37,7 @@ public class GameApp {
 		response = keyboard.nextLine();
 		boolean running =true;
 		while (running) {
-			if (response.equalsIgnoreCase("yes")) {
+			if (response.equals("yes")) {
 				System.out.println("Please pick your Hero");
 				System.out.println("---MENU-------");
 				System.out.println("1) King       ");
@@ -46,9 +46,6 @@ public class GameApp {
 				System.out.println("--------------");
 				selection = keyboard.nextInt();
 
-//				keyboard.nextInt();
-
-//			 fix when printing out no
 
 				switch (selection) {
 				case 1:
@@ -69,18 +66,19 @@ public class GameApp {
 				running = false;
 				
 				if (player != null) {
-					System.out.println(king.getName());
-					keyboard.nextLine();
-				} else if (player.equals(queen)) {
-					System.out.println(queen.getName());
-				}
+					System.out.println("Hello " + player.getName());
+					
 			} else {
 				System.out.println("Invalid input. Try again");
 				response = keyboard.nextLine();
+				keyboard.nextLine();
 				// response = yes
+				}
+			} else {
+				System.out.println("Goodbye!");
+				break;
 			}
 
 		}
 	}
-
 }// welcomemenu
