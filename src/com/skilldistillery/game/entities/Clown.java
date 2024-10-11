@@ -1,6 +1,6 @@
 package com.skilldistillery.game.entities;
 
-public class Clown extends Character {
+public class Clown extends GameCharacter {
 	private String name = "I'm the Clown";
 	private String noise;
 	private int points = 10;
