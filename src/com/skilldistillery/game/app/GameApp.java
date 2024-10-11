@@ -33,10 +33,6 @@ public class GameApp {
 		System.out.println("3) Clown      ");
 		System.out.println("--------------");
 
-
-
-		
-
 		int selection = 0;
 		if (keyboard.hasNextInt()) {
 			selection = keyboard.nextInt();
