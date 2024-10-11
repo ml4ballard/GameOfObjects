@@ -14,6 +14,30 @@ public class Queen extends GameCharacter{
 		super(name);
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNoise() {
+		return noise;
+	}
+
+	public void setNoise(String noise) {
+		this.noise = noise;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
+
 	@Override
 	public void makeNoise() {
 		super.makeNoise();

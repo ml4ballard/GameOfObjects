@@ -12,6 +12,33 @@ public class King extends GameCharacter {
 	public King(String name) {
 		super(name);
 	}
+	public String getWalk(String walk) {
+		return walk;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNoise() {
+		return noise;
+	}
+
+	public void setNoise(String noise) {
+		this.noise = noise;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
 
 	@Override
 	public void makeNoise() {
