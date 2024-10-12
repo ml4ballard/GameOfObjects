@@ -4,12 +4,21 @@ public abstract class GameCharacter {
 	private String name;
 	private String noise;
 	private int points;
+	private String walk;
 
 	public GameCharacter() {
 	}
 
 	public GameCharacter(String name) {
 		this.name = name;
+	}
+
+	public String getWalk() {
+		return walk;
+	}
+
+	public void setWalk(String walk) {
+		this.walk = walk;
 	}
 
 	public void makeNoise() {
@@ -42,6 +51,12 @@ public abstract class GameCharacter {
 
 	public void setPoints(int points) {
 		this.points = points;
+	}
+
+
+	@Override
+	public String toString() {
+		return "GameCharacter [name=" + name + ", noise=" + noise + ", points=" + points + "]";
 	}
 
 }
