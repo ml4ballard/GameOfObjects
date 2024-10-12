@@ -1,26 +1,26 @@
 
 private static void walkCharacter() {
-        String command;
+        String move;
         Boolean notFree = false;
 
         while (!notFree) {
         
             System.out.print("Enter your move (L)eft (F)orward, (Q) to quit): ");
-            command = scanner.nextLine();
+            move = scanner.nextLine();
             
-            if (command.toUpperCase().equals("Q")) {
+            if (move.toUpperCase().equals("Q")) {
                 System.out.println("You are quitting? You will die when the dragon gets you!");
                 notFree = false;
                 break; // Exit the loop or method
             }
             else {
         
-              int playerRow = 1; //start row position
-              int playerCol = 1; //start column position
+              int playerRow = 0; //start row position
+              int playerCol = 0; //start column position
 
               String[][] themaze;
               
-			switch (command.toUpperCase()) {
+			switch (move.toUpperCase()) {
                 case "L": // Move Left
              	    if (playerRow == 1 && (playerCol+1) ==1) {
             	    System.out.println("The cell to the left contains a weapon for you! Grab it");	
