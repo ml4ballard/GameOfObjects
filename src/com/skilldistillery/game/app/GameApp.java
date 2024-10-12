@@ -144,7 +144,7 @@ public class GameApp {
                             System.out.println("You moved forward " + themaze[playerRow + 1][playerCol]);
                             
                             if (themaze[playerRow][playerCol].contains("weapon")) {
-                                int points = 100; // Assuming all weapons give +100 points
+                                int points = 100;
                                 weaponPoints += points;
                                 System.out.println("You collected a weapon! Total points: " + weaponPoints);
                                 themaze[playerRow][playerCol] = " "; // it remove the weapon from the maze
