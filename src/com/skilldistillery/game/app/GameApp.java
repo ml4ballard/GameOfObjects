@@ -100,9 +100,8 @@ public class GameApp {
 		themaze [3][1] = "keep walking";
 		themaze [3][2] = "weapon";
 		themaze [4][2] = "keep walking";
-		themaze [4][2] = "keep walking";
+		themaze [4][3] = "weakMonster 20 point";		
 		themaze [5][2] = "wall";
-		themaze [4][3] = "weakMonster 20 point";
 		themaze [5][3] = "keep walking";
 		themaze [6][3] = "strongMonter 80 points";
 		themaze [6][3] = "Exit and live";
@@ -119,7 +118,11 @@ public class GameApp {
 			} else {
 				switch (command.toUpperCase()) {
 				case "L": // Move Left
-                    if (playerCol < 1) {
+				{ // need for the whole case statement
+					System.out.println("start of moving left row col" + playerRow + " " + playerCol);
+ //                   if (playerCol < 1) {
+                        if (playerCol > 1) {                  	
+                    	System.out.println("first left row col" + playerRow + " " + playerCol);
                         if (themaze[playerRow][playerCol - 1] != null && !themaze[playerRow][playerCol - 1].equals("wall")) {
                         	playerCol--;
                             System.out.println("You moved left to: " + themaze[playerRow][playerCol - 1]);
@@ -133,14 +136,17 @@ public class GameApp {
                             System.out.println("The cell to the left is blocked, try forward.");
                         }
                     } else {
+                    	System.out.println("moving left row col" + playerRow + " " + playerCol);
                         System.out.println("You can't move left, you're at the edge of the maze!");
                     }
+				} // end of need for the whole case statement
                     break;
 
                 case "F": // Move Forward
                     if (playerRow + 1 < themaze.length) {
                         if (themaze[playerRow + 1][playerCol] != null && !themaze[playerRow + 1][playerCol].equals("wall")) {
                             playerRow++;
+                            System.out.println("row col" + playerRow + " " + playerCol);
                             System.out.println("You moved forward " + themaze[playerRow + 1][playerCol]);
                             
                             if (themaze[playerRow][playerCol].contains("weapon")) {
