@@ -88,11 +88,12 @@ public class GameApp {
 
 	public void walkCharacter() {
 
-		Boolean notFree = false;
-		String command = "";
+		boolean notFree = false;
+		String command;
 		int playerRow = 1; // start row position
 		int playerCol = 1; // start column position
 		int weaponPoints = 0; 
+
 
 		String[][] themaze = new String[7][4];
 		themaze [1][1] = "keep walking";
@@ -105,6 +106,11 @@ public class GameApp {
 		themaze [5][3] = "keep walking";
 		themaze [6][3] = "strongMonter 80 points";
 		themaze [6][3] = "Exit and live";
+
+		Maze maze = new Maze();
+		maze.initializeMaze();
+//		String[][] themaze = maze.getThemaze();
+
 		
 		while (!notFree) {
 
@@ -115,7 +121,8 @@ public class GameApp {
 				System.out.println("You are quitting? You will die when the dragon gets you!");
 				notFree = true;
 				break; // Exit the loop or method
-			} else {
+			} else 
+			{
 				switch (command.toUpperCase()) {
 				case "L": // Move Left
 				{ // need for the whole case statement
@@ -163,7 +170,6 @@ public class GameApp {
                     }
                     break;
 
-//				case "L": // Move Left
 //					if (playerRow == 1 && (playerCol + 1) == 1) {
 //						System.out.println("The cell to the left contains a weapon for you! Grab it");
 //						playerCol = playerCol + 1;
@@ -177,8 +183,13 @@ public class GameApp {
 //						System.out.println("The cell to the left is blocked, try forward");
 //					break;
 //
+//
 //				case "F": // Move forward
-//					if ((playerRow + 1) == 4 && (playerCol) == 2) {
+//					if (playerRow + 1 < themaze.length) {
+//                      if (themaze[playerRow + 1][playerCol] != null && !themaze[playerRow + 1][playerCol].equals(" ")) {
+//                      	System.out.println("You moved forward " + themaze[playerRow + 1][playerCol]);
+//                          playerRow++;
+//					} else if ((playerRow + 1) == 4 && (playerCol) == 2) {
 //						System.out
 //								.println("The cell forward contains a strong monster, get ready to fight to continue.");
 //						playerCol = playerCol + 1;
@@ -192,11 +203,13 @@ public class GameApp {
 //					} else
 //						System.out.println("The cell forward is blocked, pick another direction");
 //					break;
+//					}
 //
 //				case "Q": // Player has quit
 //					System.out.println("You are quitting? You will die when the dragon gets you!");
 //					notFree = true;
 //					break;
+                    
 				default:
 					System.out.println("Invalid move. Use (L) Left, (F) Forward to move.");
 					break;

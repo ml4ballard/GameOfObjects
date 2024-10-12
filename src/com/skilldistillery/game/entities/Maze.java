@@ -1,6 +1,8 @@
 package com.skilldistillery.game.entities;
 
-public class Maze {
+import com.skilldistillery.game.app.GameApp;
+
+public class Maze extends GameApp{
 	private String[][] themaze = new String[6][4]; //6 is floor row, 4 is left or right column
 	
 	public void initializeMaze() {
@@ -22,4 +24,14 @@ public class Maze {
 			System.out.println();
 		} */
 	}
+
+	public String[][] getThemaze() {
+		return themaze;
+	}
+
+	public void setThemaze(String[][] themaze) {
+		this.themaze = themaze;
+	}
+	
+	
 }
