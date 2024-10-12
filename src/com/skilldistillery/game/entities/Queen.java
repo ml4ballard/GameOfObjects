@@ -1,7 +1,6 @@
 package com.skilldistillery.game.entities;
 
-
-public class Queen extends GameCharacter{
+public class Queen extends GameCharacter {
 	private String name = "I'm the Queen";
 	private String noise;
 	private int points = 50;
@@ -14,11 +13,11 @@ public class Queen extends GameCharacter{
 	public Queen(String name) {
 		super(name);
 	}
-	
+
 	public String getWalk() {
 		return walk;
 	}
-	
+
 	public void setWalk(String walk) {
 		this.walk = walk;
 	}

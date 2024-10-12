@@ -13,7 +13,6 @@ public class King extends GameCharacter {
 	public King(String name) {
 		super(name);
 	}
-	
 
 	public String getWalk() {
 		return walk;

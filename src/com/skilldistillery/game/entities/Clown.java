@@ -13,7 +13,7 @@ public class Clown extends GameCharacter {
 	public Clown(String name) {
 		super(name);
 	}
-	
+
 	public String getWalk() {
 		return walk;
 	}
