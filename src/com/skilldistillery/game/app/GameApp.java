@@ -95,7 +95,7 @@ public class GameApp {
 		int weaponPoints = 0; 
 
 
-		String[][] themaze = new String[7][4];
+		String[][] themaze = new String[8][4];
 		themaze [1][1] = "keep walking";
 		themaze [2][1] = "keep walking";
 		themaze [3][1] = "keep walking";
@@ -105,10 +105,10 @@ public class GameApp {
 		themaze [5][2] = "wall";
 		themaze [5][3] = "keep walking";
 		themaze [6][3] = "strongMonter 80 points";
-		themaze [6][3] = "Exit and live";
+		themaze [7][3] = "Exit and live";
 
-		Maze maze = new Maze();
-		maze.initializeMaze();
+//		Maze maze = new Maze();
+//		maze.initializeMaze();
 //		String[][] themaze = maze.getThemaze();
 
 		
@@ -122,22 +122,27 @@ public class GameApp {
 				notFree = true;
 				break; // Exit the loop or method
 			} else 
-			{
+			{ //start of else
 				switch (command.toUpperCase()) {
 				case "L": // Move Left
 				{ // need for the whole case statement
-					System.out.println("start of moving left row col" + playerRow + " " + playerCol);
- //                   if (playerCol < 1) {
-                        if (playerCol > 1) {                  	
-                    	System.out.println("first left row col" + playerRow + " " + playerCol);
-                        if (themaze[playerRow][playerCol - 1] != null && !themaze[playerRow][playerCol - 1].equals("wall")) {
-                        	playerCol--;
-                            System.out.println("You moved left to: " + themaze[playerRow][playerCol - 1]);
+//					System.out.println("start of moving left row col" + playerRow + " " + playerCol);
+                        if (playerCol + 1 < themaze.length) {
+ //                   	System.out.println("first left row col" + playerRow + " " + playerCol);
+                            if (themaze[playerRow][playerCol+1] != null && !themaze[playerRow][playerCol+1].equals("wall")) {                       	
+                            playerCol++;
+ //                           System.out.println("second left row col" + playerRow + " " + playerCol);
                             if (themaze[playerRow][playerCol].contains("weapon")) {
+                            	System.out.println("You moved left to: " + themaze[playerRow][playerCol]);
                                 int points = 100; 
                                 weaponPoints += points;
                                 System.out.println("You collected a weapon! Total points: " + weaponPoints);
-                                themaze[playerRow][playerCol] = " "; // it removes the weapon from the maze
+                            }                          
+                            else if (themaze[playerRow][playerCol].contains("weakMonster 20 point")) {
+                            	System.out.println("You moved left to: " + themaze[playerRow][playerCol]);
+                                int points = 100; 
+                                weaponPoints += points;
+                                System.out.println("You battled a weak monster! Total points: -20 ");
                             }
                         } else {
                             System.out.println("The cell to the left is blocked, try forward.");
@@ -153,14 +158,18 @@ public class GameApp {
                     if (playerRow + 1 < themaze.length) {
                         if (themaze[playerRow + 1][playerCol] != null && !themaze[playerRow + 1][playerCol].equals("wall")) {
                             playerRow++;
-                            System.out.println("row col" + playerRow + " " + playerCol);
-                            System.out.println("You moved forward " + themaze[playerRow + 1][playerCol]);
-                            
+ //                           System.out.println("row col" + playerRow + " " + playerCol);
+                            if ((playerRow) == 7 && (playerCol) == 3) {
+                            	System.out.println("You EXITED and LIVED!");
+                            	notFree = true;
+                            	break;                 
+                            }
+                            System.out.println("You moved forward " + themaze[playerRow][playerCol]);
+                         
                             if (themaze[playerRow][playerCol].contains("weapon")) {
                                 int points = 100;
                                 weaponPoints += points;
                                 System.out.println("You collected a weapon! Total points: " + weaponPoints);
-                                themaze[playerRow][playerCol] = " "; // it remove the weapon from the maze
                             }
                         } else {
                             System.out.println("The cell forward is blocked, pick another direction.");
@@ -168,48 +177,7 @@ public class GameApp {
                     } else {
                         System.out.println("You can't move forward, you're at the edge of the maze!");
                     }
-                    break;
-
-//					if (playerRow == 1 && (playerCol + 1) == 1) {
-//						System.out.println("The cell to the left contains a weapon for you! Grab it");
-//						playerCol = playerCol + 1;
-//					} else if (playerRow == 2 && (playerCol + 1) == 2) {
-//						System.out.println("The cell to the left contains a weak monster, get ready to fight");
-//						playerCol = playerCol + 1;
-//					} else if (themaze[playerRow][playerCol + 1] == " ") {
-//						System.out.println("The cell to the left is open");
-//						playerCol = playerCol + 1;
-//					} else
-//						System.out.println("The cell to the left is blocked, try forward");
-//					break;
-//
-//
-//				case "F": // Move forward
-//					if (playerRow + 1 < themaze.length) {
-//                      if (themaze[playerRow + 1][playerCol] != null && !themaze[playerRow + 1][playerCol].equals(" ")) {
-//                      	System.out.println("You moved forward " + themaze[playerRow + 1][playerCol]);
-//                          playerRow++;
-//					} else if ((playerRow + 1) == 4 && (playerCol) == 2) {
-//						System.out
-//								.println("The cell forward contains a strong monster, get ready to fight to continue.");
-//						playerCol = playerCol + 1;
-//					} else if ((playerRow + 1) == 5 && (playerCol) == 2) {
-//						System.out.println("You are free!");
-//						notFree = true;
-//						playerCol = playerCol + 1;
-//					} else if (themaze[playerRow + 1][playerCol] == " ") {
-//						System.out.println("The cell to forward is open");
-//						playerRow = playerRow + 1;
-//					} else
-//						System.out.println("The cell forward is blocked, pick another direction");
-//					break;
-//					}
-//
-//				case "Q": // Player has quit
-//					System.out.println("You are quitting? You will die when the dragon gets you!");
-//					notFree = true;
-//					break;
-                    
+                    break;                  
 				default:
 					System.out.println("Invalid move. Use (L) Left, (F) Forward to move.");
 					break;
