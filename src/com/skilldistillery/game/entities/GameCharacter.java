@@ -53,7 +53,6 @@ public abstract class GameCharacter {
 		this.points = points;
 	}
 
-
 	@Override
 	public String toString() {
 		return "GameCharacter [name=" + name + ", noise=" + noise + ", points=" + points + "]";
